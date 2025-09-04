@@ -36,6 +36,11 @@ print(my_list.index(2))      #rerurns the first occurence of the value in a list
 print(my_list.count(2))       #count how many times a value appears in the list
 
 
+cart = []
+cart[0] = 'dog'
+cart[1] = 'box'
+print(cart)   #? ERROR:list assignment index out of range. For lists, subscript assignment only works for existing valid indices.
+
 nums = [2, 9, 1, 8, 5, 64]   #?syntax value in some_list
 print(7 in nums)     #in: A comparison operator that checks if a value is in a list 
 
@@ -62,29 +67,48 @@ empty_tuple = tuple()
 
 '''
 are like lists only difference is they are immutable
-methods in lists that are used to mutate original list arent available in tuples'''
+methods in lists that are used to mutate original list arent available in tuples
+iteration is faster in tuples than in lists
+Can be used as dictionary keys
+'''
 my_tuple = (1, 2, 3, 4, 5)
 print(my_tuple[0])         # Output: 1
 # my_tuple[1] = 10         # Error: Tuples are immutable
+grades = {("Alice", "Math"): 95, ("Bob", "Math"): 85} #used as dictionary keys
+
 
 #!================================================================
 #📑📑SETS{}
 empty_set = {}            #this isnt right as it creates an empty dictionary
-empty_list = set()        #how to create empty lists
+empty_set2 = set()        #how to create empty lists
 
 '''
-A set is an unordered, mutable collection of unique items. Sets do not allow duplicates and do not maintain any specific order of elements.
+A set is an unordered, mutable collection of unique items. 
+Sets do not allow duplicates and do not maintain any specific order of elements.
 The order of elements is not preserved, and they are accessed by value, not by index.
 '''
-my_set = {1, 2, 3, 4, 5}
+my_set = {1, 2, 3, 3, 4, 5}
 cs_courses = {'math', 'phy', 'business', 'calculus'}
-art_courses = {'math', 'art', 'business', 'desing'}
+art_courses = {'math', 'art', 'business', 'design'}
 
 print(my_set)              # Output: {1, 2, 3, 4, 5}
 my_set.add(6)              # Adds 6 to the set
 my_set.add(3)              # No effect, as 3 is already in the set
 print(my_set)              # Output: {1, 2, 3, 4, 5, 6}
 
-print(cs_courses.intersection(art_courses)) #used to check which elements are share across multiple sets
+print('math' in cs_courses) # faster than lists
+print(cs_courses.intersection(art_courses)) #used to check which elements are shared across multiple sets
 print(cs_courses.difference(art_courses)) #used to check which elements are the 1st set but not in second
 print(cs_courses.union(art_courses)) #join elements in all the sets
+
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a | b)  # Union: {1, 2, 3, 4, 5}
+print(a & b)  # Intersection: {3}
+print(a - b)  # Difference: {1, 2}
+print(a ^ b)  # Symmetric Difference: {1, 2, 4, 5} elements that are in either set, but not in both.
+a.remove(2)  # Remove an element (raises KeyError if not found)
+a.discard(5)  # Remove an element if it exists (no error if not found)
+a.clear()    # Remove all elements from the set
+print(a) # Output: set()

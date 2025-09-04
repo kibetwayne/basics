@@ -1,8 +1,10 @@
 #📑STRINGS
-#!strings are immutabe. python doesnt change the original value of a string. You simply can't change the original string - you can only create new variables and asing the changes to it.
+'''strings are immutabe. python doesnt change the original value of a string. You simply can't change the original string - you can only create new variables and asing the changes to it.
+
+you can loop through strings'''
 
 #👉string methods
-print(help(str))#list all mehods on string and what they do
+print(help(str))#list all methods on string and what they do
 
 message = 'hello world'
 print(dir(message)) #gives a list of all available methods
@@ -65,6 +67,15 @@ print(sentence.index('fox'))  # Find index of 'fox'. Each caracter has an index
 #11. length
 print(len(sentence))  # how many characters are in the string
 
+#12. Join
+string1 = ['h', 'e', 'l', 'l', 'o']
+print(''.join(string1))  # Join list of characters into a single string
+print('-'.join(string1))  # Join with a hyphen
+
+#13. sort
+words = ['banana', 'apple', 'cherry']
+print(sorted(words))  # Sorts the list of words alphabetically
+
 #!================================================================
 #?string slicing
 
@@ -87,9 +98,9 @@ print(text[::-1])  # Output: "nohtyp" (reverses the string)
 print(text[-4:-1])  # Output: "tho" (slices from index -4 to -1, exclusive)
 
 #!================================================================
-#?inputs 
+#?inputs input() always returns a string 
 
-car = input('what car do you prefer') #output is always a string
+car = input('what car do you prefer?') #output is always a string
 print(f'your favorite car is {car}')
 
 #!================================================================
