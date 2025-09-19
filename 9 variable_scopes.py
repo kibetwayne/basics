@@ -25,15 +25,26 @@ def global_scope():
 global_scope()
 
 #eg2
-x = 20  
+age = 20  
+
+# def my_function():
+#     global agenot advisible. use return statements
+#     age 30  # Modifies the global variable age
+#     print(age)# 30
+
+# my_function()
+# print(age)# 30
 
 def my_function():
-    global x
-    x = 30  # Modifies the global variable x
-    print(x)  # 30
+    return age + 1
 
-my_function()
-print(x)  # 30
+age = my_function()
+print(f'new age is {age}') # output: 21
+
+#only use global keyword when setiing contstants that are not going to change eg
+PI = 3.141
+URL = 'www.youtube.com'
+INSTAGRAM_HANDLE = 'k1bet_'
 
 #!================================================================
 #built-in scope => name that are predefined in py eg len, str, print
